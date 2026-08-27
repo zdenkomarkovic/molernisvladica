@@ -29,17 +29,15 @@ export function Footer() {
               <Image
                 src="/logo.jpg"
                 alt={`${SITE_NAME} logo`}
-                width={44}
-                height={44}
+                width={120}
+                height={120}
                 className="rounded-full"
               />
-              <span className="font-display text-lg font-bold text-cream">
-                {SITE_NAME}
-              </span>
+              <span className="font-display text-lg font-bold text-cream">{SITE_NAME}</span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-cream/60">
-              Molerski radovi, gletovanje, krečenje, dekorativne tehnike i
-              adaptacija stanova u {CONTACT_LOCATION}.
+              Molerski radovi, gletovanje, krečenje, dekorativne tehnike i adaptacija stanova u{" "}
+              {CONTACT_LOCATION}.
             </p>
             <div className="mt-5 flex items-center gap-3">
               <a
@@ -49,7 +47,13 @@ export function Footer() {
                 aria-label="Facebook"
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-cream/10 text-cream transition hover:bg-orange"
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
                   <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z" />
                 </svg>
               </a>
@@ -60,7 +64,17 @@ export function Footer() {
                 aria-label="Instagram"
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-cream/10 text-cream transition hover:bg-orange"
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
                   <rect x="2" y="2" width="20" height="20" rx="5" />
                   <circle cx="12" cy="12" r="4" />
                   <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
@@ -70,9 +84,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="font-display text-sm font-semibold text-cream">
-              Usluge
-            </p>
+            <p className="font-display text-sm font-semibold text-cream">Usluge</p>
             <ul className="mt-4 space-y-2.5">
               {SERVICES.map((service) => (
                 <li key={service.slug}>
@@ -88,9 +100,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="font-display text-sm font-semibold text-cream">
-              Navigacija
-            </p>
+            <p className="font-display text-sm font-semibold text-cream">Navigacija</p>
             <ul className="mt-4 space-y-2.5">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
@@ -106,23 +116,15 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="font-display text-sm font-semibold text-cream">
-              Kontakt
-            </p>
+            <p className="font-display text-sm font-semibold text-cream">Kontakt</p>
             <ul className="mt-4 space-y-2.5 text-sm text-cream/60">
               <li>
-                <a
-                  href={`tel:${CONTACT_PHONE_HREF}`}
-                  className="transition hover:text-orange"
-                >
+                <a href={`tel:${CONTACT_PHONE_HREF}`} className="transition hover:text-orange">
                   {CONTACT_PHONE}
                 </a>
               </li>
               <li>
-                <a
-                  href={`mailto:${CONTACT_EMAIL}`}
-                  className="transition hover:text-orange"
-                >
+                <a href={`mailto:${CONTACT_EMAIL}`} className="transition hover:text-orange">
                   {CONTACT_EMAIL}
                 </a>
               </li>

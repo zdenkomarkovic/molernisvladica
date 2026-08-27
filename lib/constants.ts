@@ -37,6 +37,7 @@ export interface ServiceBreakdown {
   intro: string;
   process: string;
   priceFactors: string[];
+  image?: string;
 }
 
 export interface Service {
@@ -72,6 +73,7 @@ export const SERVICES: Service[] = [
           "Priprema podloge koja odlučuje kako će zid izgledati posle bojenja – ravna i glatka površina bez koje ni jedna boja neće leći kako treba.",
         process:
           "Prvo se podloga očisti i pregleda, sanira se oštećenje i bandažiraju spojevi, zatim se nanosi glet masa u jednom ili više slojeva. Na kraju se površina brusi do glatkog i ravnog rezultata, spremnog za krečenje.",
+        image: "/2148384472.jpg",
         priceFactors: [
           "Stanje postojeće podloge (pukotine, vlaga, neravnine)",
           "Broj potrebnih slojeva gleta",
@@ -85,6 +87,7 @@ export const SERVICES: Service[] = [
           "Završni sloj koji najviše utiče na izgled prostora – ravnomerno nanet, bez fleka i tragova valjka.",
         process:
           "Boja se nanosi u jednom ili više slojeva, u zavisnosti od tona i tipa boje (poludisperzija ili periva boja). Kod intenzivnih i pastelnih tonova prvo se nanosi osnovni premaz, kako bi boja legla ravnomerno i u jednom nijansi.",
+        image: "/m3.png",
         priceFactors: [
           "Vrsta boje (poludisperzija, periva, intenzivni ili pastelni tonovi)",
           "Broj slojeva",
@@ -137,6 +140,7 @@ export const SERVICES: Service[] = [
           "Teksturirana dekorativna tehnika sa mat, peskovitim efektom koji podseća na pustinjski pesak.",
         process:
           "Nanosi se u jednom ili dva sloja posebnom glet masom sa finim zrnom, a zatim se obrađuje alatom (gletericom, sunđerom ili četkom) kako bi se dobila željena tekstura i pravac.",
+        image: "/m10.png",
         priceFactors: [
           "Broj slojeva i gustina teksture",
           "Priprema podloge pre nanošenja",
@@ -150,6 +154,7 @@ export const SERVICES: Service[] = [
           "Dekorativni premaz sa efektom somota – meki, baršunasti sjaj koji menja intenzitet u zavisnosti od ugla svetlosti.",
         process:
           "Nanosi se u dva tanka sloja specijalnom rukavicom ili četkom, uz kružne pokrete koji stvaraju karakterističan svileni sjaj.",
+        image: "/616760407_122096099175219630_5800983690351344552_n.jpg",
         priceFactors: [
           "Broj slojeva",
           "Priprema i gletovanje podloge",
@@ -163,6 +168,7 @@ export const SERVICES: Service[] = [
           "Klasična italijanska tehnika koja imitira izgled prirodnog mermera, sa dubinom i teksturom kamena.",
         process:
           "Nanosi se u više tankih slojeva glet mase na bazi kreča, uz poliranje mistrijom između slojeva radi postizanja sjaja i efekta kamena.",
+        image: "/108223.jpg",
         priceFactors: [
           "Broj slojeva i stepen poliranja",
           "Priprema podloge",
@@ -176,6 +182,7 @@ export const SERVICES: Service[] = [
           "Venecijanska tehnika daje glatku, sjajnu površinu sličnu poliranom kamenu, sa dubokim, staklastim efektom.",
         process:
           "Nanosi se u više vrlo tankih slojeva specijalne glet mase, uz poliranje čeličnom mistrijom nakon svakog sloja dok se ne postigne željeni sjaj.",
+        image: "/9512.jpg",
         priceFactors: [
           "Broj slojeva (obično tri ili više)",
           "Priprema i gletovanje podloge",
@@ -221,7 +228,7 @@ export const SERVICES: Service[] = [
       "Sitni pripremni i građevinski radovi",
       "Dogovoren rok i cena pre početka posla",
     ],
-    image: "/615435057_122094589719219630_1282113199527645426_n.jpg",
+    image: "/m2.png",
   },
 ];
 

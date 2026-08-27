@@ -143,7 +143,17 @@ export default async function ServicePage({ params }: PageProps) {
                       index % 2 === 1 ? "lg:order-2" : ""
                     }`}
                   >
-                    <ImagePlaceholder label={sub.title} />
+                    {sub.image ? (
+                      <Image
+                        src={sub.image}
+                        alt={sub.title}
+                        fill
+                        sizes="(min-width: 1024px) 480px, 90vw"
+                        className="object-cover"
+                      />
+                    ) : (
+                      <ImagePlaceholder label={sub.title} />
+                    )}
                   </div>
                   <div className="p-6 sm:p-8">
                     <h3 className="font-display text-xl font-bold text-ink">

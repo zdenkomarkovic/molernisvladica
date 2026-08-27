@@ -3,12 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import {
-  CONTACT_PHONE,
-  CONTACT_PHONE_HREF,
-  SERVICES,
-  SITE_NAME,
-} from "@/lib/constants";
+import { CONTACT_PHONE, CONTACT_PHONE_HREF, SERVICES, SITE_NAME } from "@/lib/constants";
 
 const NAV_LINKS = [
   { href: "/cenovnik", label: "Cenovnik" },
@@ -23,13 +18,13 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-ink/10 bg-cream/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/logo.jpg"
             alt={`${SITE_NAME} logo`}
-            width={56}
-            height={56}
+            width={90}
+            height={90}
             className="rounded-full"
             priority
           />
@@ -123,11 +118,7 @@ export function Header() {
             strokeLinejoin="round"
             aria-hidden="true"
           >
-            {open ? (
-              <path d="M18 6 6 18M6 6l12 12" />
-            ) : (
-              <path d="M3 6h18M3 12h18M3 18h18" />
-            )}
+            {open ? <path d="M18 6 6 18M6 6l12 12" /> : <path d="M3 6h18M3 12h18M3 18h18" />}
           </svg>
         </button>
       </div>
