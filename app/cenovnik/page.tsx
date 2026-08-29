@@ -1,22 +1,29 @@
 import { buildMetadata } from "@/lib/metadata";
 import { CONTACT_PHONE, CONTACT_PHONE_HREF, PRICING } from "@/lib/constants";
+import { breadcrumbSchema } from "@/lib/structured-data";
+import { JsonLd } from "@/components/seo/JsonLd";
 import Link from "next/link";
 
 export const metadata = buildMetadata({
-  title: "Cenovnik",
+  title: "Cenovnik molerskih radova – Niš",
   description:
-    "Cenovnik molerskih usluga u Nišu – gletovanje, krečenje, dekorativne tehnike i adaptacija stana.",
-  image: "/logo.jpg",
+    "Cenovnik molerskih usluga u Nišu – gletovanje od 2,5 €/m², krečenje od 1,5 €/m², dekorativne tehnike i adaptacija stana. Konačna cena nakon besplatne procene.",
   url: "/cenovnik",
 });
 
 export default function CenovnikPage() {
   return (
     <main>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Početna", path: "/" },
+          { name: "Cenovnik", path: "/cenovnik" },
+        ])}
+      />
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <h1 className="font-display text-3xl font-bold text-ink sm:text-4xl">
-            Cenovnik
+            Cenovnik molerskih radova u Nišu
           </h1>
           <p className="mt-4 text-lg text-ink/70">
             Orijentacione cene molerskih usluga u Nišu i okolini. Konačna

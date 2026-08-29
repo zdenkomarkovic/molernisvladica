@@ -8,10 +8,10 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
 
 export const metadata = buildMetadata({
-  title: "Moler Niš",
+  title: "Moler Niš – moleraj, gletovanje i krečenje",
   description:
-    "Moler u Nišu – molerski radovi, gletovanje, krečenje, dekorativne tehnike i adaptacija stanova. Pozovite za besplatnu procenu.",
-  image: "/logo.jpg",
+    "Moler u Nišu – molerski radovi, gletovanje, krečenje, dekorativne tehnike (Sahara, Velvet, Marmorino, Venecijanska) i adaptacija stanova. Besplatna procena na licu mesta.",
+  url: "/",
 });
 
 export default function HomePage() {

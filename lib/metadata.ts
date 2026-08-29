@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SITE_NAME, SITE_URL } from "./constants";
+import { SITE_LOCALE, SITE_NAME, SITE_URL } from "./constants";
 
 interface BuildMetadataOptions {
   title?: string;
@@ -37,8 +37,9 @@ export function buildMetadata({
   publishedTime,
 }: BuildMetadataOptions = {}): Metadata {
   const fullTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME;
-  const canonicalUrl = url ?? SITE_URL;
-  const ogImage = image ?? `${SITE_URL}/og-image.png`; // Dodaj og-image.png u /public
+  const canonicalUrl = url ?? "/";
+  // Ako slika nije prosleđena, koristi dinamički generisan OG (app/opengraph-image.tsx).
+  const ogImage = image ?? `${SITE_URL}/opengraph-image`;
 
   return {
     // "absolute" osigurava da se ne duplira sa title.template iz root layout-a.
@@ -53,6 +54,7 @@ export function buildMetadata({
       description,
       url: canonicalUrl,
       siteName: SITE_NAME,
+      locale: SITE_LOCALE,
       type,
       images: [
         {

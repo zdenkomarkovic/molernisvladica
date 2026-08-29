@@ -4,8 +4,12 @@ const nextConfig: NextConfig = {
   // Strict mode za React - hvata potencijalne probleme ranije
   reactStrictMode: true,
 
-  // Optimizacija slika - dodaj domene po potrebi
+  // Ne odaje da je sajt pravljen u Next.js
+  poweredByHeader: false,
+
+  // Optimizacija slika
   images: {
+    formats: ["image/avif", "image/webp"],
     remotePatterns: [
       // Primer:
       // {
@@ -15,7 +19,7 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  // Headers za bolju sigurnost
+  // Headers za bolju sigurnost i keširanje
   async headers() {
     return [
       {
@@ -25,6 +29,21 @@ const nextConfig: NextConfig = {
           { key: "X-Frame-Options", value: "DENY" },
           { key: "X-XSS-Protection", value: "1; mode=block" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload",
+          },
+        ],
+      },
+      {
+        // Dugotrajno keširanje za statичke slike u /public
+        source:
+          "/:path*.(jpg|jpeg|png|webp|avif|gif|svg|ico|woff|woff2|ttf|otf)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
         ],
       },
     ];

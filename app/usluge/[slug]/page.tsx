@@ -3,6 +3,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { buildMetadata } from "@/lib/metadata";
 import { SERVICES } from "@/lib/constants";
+import {
+  breadcrumbSchema,
+  faqSchema,
+  serviceSchema,
+} from "@/lib/structured-data";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 
@@ -42,6 +47,14 @@ export default async function ServicePage({ params }: PageProps) {
 
   return (
     <main>
+      <JsonLd data={serviceSchema(service)} />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Početna", path: "/" },
+          { name: "Usluge", path: "/#usluge" },
+          { name: service.title, path: `/usluge/${service.slug}` },
+        ])}
+      />
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <Link
@@ -194,20 +207,7 @@ export default async function ServicePage({ params }: PageProps) {
 
       {service.faq && service.faq.length > 0 && (
         <section className="border-t border-ink/10 bg-cream py-16">
-          <JsonLd
-            data={{
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              mainEntity: service.faq.map((item) => ({
-                "@type": "Question",
-                name: item.question,
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: item.answer,
-                },
-              })),
-            }}
-          />
+          <JsonLd data={faqSchema(service.faq)} />
           <div className="mx-auto max-w-3xl px-4 sm:px-6">
             <h2 className="font-display text-2xl font-bold text-ink">
               Česta pitanja

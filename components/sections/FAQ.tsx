@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { CONTACT_LOCATION, CONTACT_PHONE } from "@/lib/constants";
+import { faqSchema } from "@/lib/structured-data";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 const FAQ_ITEMS = [
@@ -46,20 +47,7 @@ export function FAQ() {
 
   return (
     <section id="faq" className="bg-white py-20">
-      <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: FAQ_ITEMS.map((item) => ({
-            "@type": "Question",
-            name: item.question,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: item.answer,
-            },
-          })),
-        }}
-      />
+      <JsonLd data={faqSchema(FAQ_ITEMS)} />
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <div className="max-w-2xl">
           <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">

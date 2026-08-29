@@ -4,8 +4,9 @@ import { z } from "zod";
 // Dodaj ovde sve env varijable koje projekat koristi
 
 const envSchema = z.object({
-  NEXT_PUBLIC_SITE_URL: z.string().url().default("http://localhost:3000"),
+  NEXT_PUBLIC_SITE_URL: z.string().url().default("https://molerajnis.rs"),
   NEXT_PUBLIC_SITE_NAME: z.string().default("Colorium"),
+  NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION: z.string().optional(),
   NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
 
   // Mailjet (kontakt forma)

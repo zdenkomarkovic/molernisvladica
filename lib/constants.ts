@@ -1,16 +1,54 @@
 // Globalne konstante sajta
 // Ove vrednosti se koriste za SEO, metadata, itd.
 
-export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+export const SITE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://molerajnis.rs"
+).replace(/\/$/, "");
 
-export const SITE_NAME =
-  process.env.NEXT_PUBLIC_SITE_NAME ?? "Colorium";
+export const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME ?? "Colorium";
 
 export const SITE_DESCRIPTION =
-  "Colorium – moler u Nišu. Molerski radovi, gletovanje, krečenje, dekorativne tehnike i adaptacija stanova. Brzo, uredno i po dogovorenom roku.";
+  "Colorium – moler u Nišu. Molerski radovi, gletovanje, krečenje, dekorativne tehnike i adaptacija stanova. Brzo, uredno i po dogovorenom roku. Besplatna procena na licu mesta.";
 
 export const SITE_TAGLINE = "Moler Niš i okolina";
+
+export const SITE_LOCALE = "sr_RS";
+
+/** Verifikacija za Google Search Console (samo token, ne ceo meta tag). */
+export const GOOGLE_SITE_VERIFICATION =
+  process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ?? undefined;
+
+// ─── Lokacija / geo (za structured data i lokalni SEO) ────────────────────────
+
+/** Mesta koja pokrivamo – koristi se za areaServed u structured data. */
+export const AREAS_SERVED = [
+  "Niš",
+  "Niška Banja",
+  "Merošina",
+  "Doljevac",
+  "Gadžin Han",
+  "Aleksinac",
+];
+
+/** Približne koordinate centra Niša (za LocalBusiness geo). */
+export const GEO = {
+  latitude: 43.3209,
+  longitude: 21.8958,
+};
+
+/** Radno vreme – ponedeljak–subota. */
+export const OPENING_HOURS = {
+  days: [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ],
+  opens: "08:00",
+  closes: "19:00",
+};
 
 // ─── Kontakt ──────────────────────────────────────────────────────────────────
 

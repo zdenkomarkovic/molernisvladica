@@ -8,17 +8,19 @@ import {
   SOCIAL_INSTAGRAM,
 } from "@/lib/constants";
 
-export function Contact() {
+export function Contact({ as = "h2" }: { as?: "h1" | "h2" } = {}) {
+  const Heading = as;
+
   return (
     <section id="kontakt" className="bg-white py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="max-w-2xl">
-          <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">
-            Kontakt
-          </h2>
+          <Heading className="font-display text-3xl font-bold text-ink sm:text-4xl">
+            Kontakt – moler Niš
+          </Heading>
           <p className="mt-4 text-lg text-ink/70">
             Pozovite za besplatnu procenu ili pošaljite poruku – javljamo se
-            u najkraćem roku.
+            u najkraćem roku. Radimo u Nišu i okolini.
           </p>
         </div>
 
