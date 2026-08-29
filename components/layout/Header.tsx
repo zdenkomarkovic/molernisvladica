@@ -34,6 +34,13 @@ export function Header() {
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
+          <Link
+            href="/"
+            className="text-sm font-medium text-ink/80 transition hover:text-orange"
+          >
+            Početna
+          </Link>
+
           <div className="group relative py-3">
             <Link
               href="/#usluge"
@@ -126,6 +133,13 @@ export function Header() {
       {open && (
         <div className="border-t border-ink/10 bg-cream px-4 pb-4 md:hidden">
           <nav className="flex flex-col gap-1 pt-2">
+            <Link
+              href="/"
+              onClick={() => setOpen(false)}
+              className="rounded-md px-2 py-2.5 text-sm font-medium text-ink/80 hover:bg-ink/5 hover:text-orange"
+            >
+              Početna
+            </Link>
             <Link
               href="/#usluge"
               onClick={() => setOpen(false)}
